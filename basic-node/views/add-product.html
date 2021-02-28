@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        .body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        main {
+            padding: 1rem;
+        }
+
+        .main-header {
+            width: 100%;
+            margin: 0;
+            padding: 0 1.5rem;
+            height: 3.5rem;
+            background-color: rgb(106, 182, 91);
+    
+        }
+        .main-header_nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .main-header-item_list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .main-header_items {
+            margin: 0;
+            padding: 0;
+            margin: 1rem;
+        }
+        .main-header_items a {
+            text-decoration: none;
+            color: black;
+
+        }
+        .main-header_items a:hover,
+        .main-header_items a:active,
+        .main-header_items a:active {
+            color:rgb(73, 36, 116);;
+        }
+        .form-control label,
+        .form-control input {
+            display: block;
+            width: 100%;
+
+        }
+        .form-control {
+            margin: 1rem 0rem;
+        }
+        .product-form {
+            width: 20rem;
+            max-width: 90%;
+            margin: auto;
+
+        }
+        .form-control input {
+            border: 1px solid  rgb(106, 182, 91);
+            font: inherit;
+            border-radius: 2px;
+
+        }
+        button {
+            font: inherit;
+            border: 1px solid rgb(73, 36, 116);;
+            color: rgb(73, 36, 116);;
+            background: white;
+            border-radius: 3px;
+            cursor: pointer;
+
+        }
+        button:hover,
+        button:active {
+            background-color:rgb(73, 36, 116);;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header_nav">
+            <ul class="main-header-item_list">
+                <li class="main-header_items"><a href="/">Shop</a></li>
+                <li class="main-header_items"><a class="active" href="/admin/add-product">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <form class="product-form" action="/admin/add-product" method="POST">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <button type="submit">Product</button>
+
+        </form>
+    </main>
+
+</body>
+</html>

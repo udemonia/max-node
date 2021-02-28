@@ -1,0 +1,10 @@
+
+fs -> file system
+
+http -> http requests - launch a server
+
+https -> https requests - launch an SSL server
+
+path -> file/folder directories
+
+os -> operating system 

@@ -1,0 +1,17 @@
+
+Stream -> request body 1 -> request body 2 -> request body 3 -> Fully Parsed
+
+data comes in chunks
+
+done so that we can start working on this right away - as data comes in, 
+not when its complete
+
+think of large files uploaded; etc.
+
+To work with streamed data you need a buffer:
+
+A buffer is like a bus stop - points in time to interact w/ the streamed
+
+w/ node proper we can do this with event listeners
+
+.on()

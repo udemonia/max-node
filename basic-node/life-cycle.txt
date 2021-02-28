@@ -1,0 +1,22 @@
+
+--------------------------------------------------------------------
+
+node server.js 
+-> start script 
+-> parse code, register variables & functions
+
+--------------------------------------------------------------------
+
+We Never Left The Code Though
+
+THIS IS BECAUSE OF THE EVENT LOOP IN NODE js
+
+The Script Will Keep Running As Long As There Is Work To Do 
+
+The Node Event Loop Is Used For All Kinds Of Stuff - Like Accessing DataBases, APIs, Servers
+
+Single Threaded JavaScript - Uses 1 Thread On Our Computer
+
+- - - - - - - - - - - >Keep it Running - Execute When An Event Occurs< - - - - - - - - - - - - - 
+
+we could tech end with process.exit()
