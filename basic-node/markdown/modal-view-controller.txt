@@ -1,0 +1,30 @@
+Structuring your code
+
+we want to follow a certain structure when writing web apps
+
+MVC Pattern:
+
+What is MVC?
+
+Its a separate of concerns, different parts of your code does different things
+
+We work with models, views and controllers
+
+Models 
+
+are objects -> representing the Data and working with the Data
+
+* fetch
+* save
+
+views
+
+* rendering the right content
+* decoupled from app code
+
+Controllers 
+
+Are the connection between the models and the views
+The controller is the middle man
+
+How does a route fit into this? 
