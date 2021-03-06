@@ -1,39 +1,40 @@
-const fs = require('fs')
-const path = require('path')
-const p = path.join(__dirname, 
-    '..', 
-    'data', 
-    'products.json')
+const fs = require('fs');
+const path = require('path');
 
-const getProductsFromFile = (cb) => {
-    fs.readFile(p, (err, fileContent) => {
-        if (err) {
-            return cb([])
-        }
-        cb(JSON.parse(fileContent))  // JSON.parse to return array and not text
-    })
-}        
+const p = path.join(
+  path.dirname(process.mainModule.filename),
+  'data',
+  'products.json'
+);
+
+const getProductsFromFile = cb => {
+  fs.readFile(p, (err, fileContent) => {
+    if (err) {
+      cb([]);
+    } else {
+      cb(JSON.parse(fileContent));
+    }
+  });
+};
 
 module.exports = class Product {
-    constructor(title, imageURL, description, price) {
-        this.title = title;
-        this.imageURL = imageURL,
-        this.description = description,
-        this.price = price
-    }
+  constructor(title, imageUrl, description, price) {
+    this.title = title;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.price = price;
+  }
 
-    save() {
-        getProductsFromFile((products) => {
-            products.push(this)
-            fs.writeFile(p, JSON.stringify(products), (err) => {
-                console.log(err);
-            });
-        });
-    }
+  save() {
+    getProductsFromFile(products => {
+      products.push(this);
+      fs.writeFile(p, JSON.stringify(products), err => {
+        console.log(err);
+      });
+    });
+  }
 
-    static fetchAll(cb) {
-        getProductsFromFile(cb);
-        // static allows fetch to be called on the object itself - 
-        // so we don't have to create a new class just to call method
-    }
-}
+  static fetchAll(cb) {
+    getProductsFromFile(cb);
+  }
+};

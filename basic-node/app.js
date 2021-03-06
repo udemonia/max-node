@@ -1,13 +1,11 @@
 const path = require('path');
-const chalk = require('chalk');
-const morgan = require('morgan')
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const errorController = require('./controllers/error')
+
+const errorController = require('./controllers/error');
 
 const app = express();
-
-app.use(morgan('tiny'));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -22,8 +20,7 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use(errorController.get404);
-
-const port = 2002
+const port = 2002;
 app.listen(port, ()=>{
-    console.log(chalk.green.inverse.bold` ⚡️ Listening on ${port} `)
+    console.log(`Listening on port: ${port}`)
 })
